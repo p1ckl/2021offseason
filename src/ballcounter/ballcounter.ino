@@ -12,6 +12,7 @@ void setup() {
 void loop() {
   snr_a_state = digitalRead(MZ80_A);
   snr_b_state = digitalRead(MZ80_A);
+  snr_a_state
   Serial.print("Sensör 1 : ");
   Serial.print(snr_a_state);
   Serial.print("\n");
