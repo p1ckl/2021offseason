@@ -15,7 +15,7 @@ void setup() {
 
 void loop() {
   snr_a_state = !digitalRead(MZ80_A);
-  snr_b_state = !digitalRead(MZ80_A);
+  snr_b_state = !digitalRead(MZ80_B);
   if(snr_a_state != prev_a_state){
     if(snr_a_state == 1){
       ball_count_a++;
@@ -28,8 +28,9 @@ void loop() {
   }
   Serial.print("1. Sensör Top Sayısı : ");
   Serial.print(ball_count_a);
-  Serial.print("2. Sensör Top Sayısı : ");
-  Serial.print(ball_count_b);
+  Serial.print("\n");
+  //Serial.print("2. Sensör Top Sayısı : ");
+  //Serial.print(ball_count_b);
   Serial.print("\n--------------\n");
   prev_a_state = snr_a_state;
   prev_b_state = snr_b_state;
