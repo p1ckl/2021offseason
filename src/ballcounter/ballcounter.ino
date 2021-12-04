@@ -16,8 +16,11 @@ void setup() {
 
 void loop() {
 	time_start = micros();
+
 	sS_1 = !digitalRead(MZ80_A);
 	sS_2 = !digitalRead(MZ80_B);
+
+	time_end = micros();
 
 	count_balls(MZ80_A, sS_1, prevState_1);
 	count_balls(MZ80_B, sS_2, prevState_2);
@@ -25,7 +28,6 @@ void loop() {
 	prevState_1 = sS_1;
 	prevState_2 = sS_2;
 
-	time_end = micros();
 
 	max_delay = max(max_delay, time_end-time_start);
 
